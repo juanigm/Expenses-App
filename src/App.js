@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Expense from "./Components/Expenses/Expense";
+import NewExpense from './Components/NewExpense/NewExpense';
 
 
 const App = () => {
@@ -27,9 +28,16 @@ const App = () => {
     },
   ];
 
+
+  const saveNewExpenseHanlder = (data) => {
+    console.log('In App.js');
+    console.log(data);
+  };
+
   return (
     <div className="App">
         <h1 className="title">Go to learn React!</h1>
+        <NewExpense onSaveNewExpense={saveNewExpenseHanlder} />
         <Expense expenses={expenses}></Expense>
     </div>
   );
